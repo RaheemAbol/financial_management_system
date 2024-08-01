@@ -85,3 +85,4 @@ practice project to increase your java skills using lambdas
    - **Hint:** Call the methods and print the results.
 5. Write results to new CSV files using `CSVWriter`.
    - **Hint:** Example method call: `CSVWriter.writeEmployeesToCSV(employees, "output.csv")`.
+   - **Hint:** Create a file for each department that includes all employees from that department: ` CSVWriter.writeEmployeesToCSV(hrEmployees, "output_hr_employees.csv");`.
