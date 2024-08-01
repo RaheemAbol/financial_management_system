@@ -70,6 +70,10 @@ practice project to increase your java skills using lambdas
      - Use `Collectors.groupingBy` and `Collectors.summingDouble`.
    - **Hint:** `public static Map<String, Double> getAverageHourlyRateByDepartment(List<Employee> employees)`.
      - Use `Collectors.groupingBy` and `Collectors.averagingDouble`.
+     - **Hint:** `public static int getNumSum(int number)`.
+     - Use `Helper method for getSumOfEmployeeIdDigits (no lambda needed) `.
+     -  **Hint:** `public static int getSumOfEmployeeIdDigits(List<Employee> employees)`.
+     - Use `mapToInt` and `map(use helper function here) and sum`.
 
 **Ticket 5: Create Main Class**
 
