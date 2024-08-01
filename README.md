@@ -47,13 +47,10 @@ practice project to increase your java skills using lambdas
 
 **Tasks:**
 1. Create the `FinancialOperations` class.
-2. Implement `getHourlyRateSum` method using traditional approach.
-   - **Hint:** Example method signature: `public static double getHourlyRateSum(List<Employee> employees)`.
-   - **Hint:** Use a loop to sum the hourly rates of all employees.
-3. Implement `getHourlyRateSum` method using streams.
+2. Implement `getHourlyRateSum` method using streams.
    - **Hint:** Example method signature: `public static double getHourlyRateSum(List<Employee> employees)`.
    - **Hint:** Use `mapToDouble` and `sum` methods.
-4. Implement additional operations using streams:
+3. Implement additional operations using streams:
    - **Hint:** `public static double sumDepartmentSalary(List<Employee> employees, String department)`.
      - Use `filter` and `mapToDouble`.
    - **Hint:** `public static double getAverageSalaryByDepartment(List<Employee> employees, String department)`.
