@@ -1,0 +1,120 @@
+Let's break down the content of the PDF on functional programming and lambda expressions step by step:
+
+1. Introduction to Functional Programming
+Functional Programming is a programming paradigm that treats computation as the evaluation of mathematical functions.
+It emphasizes expressions rather than statements and is considered a declarative type of programming.
+2. Java Functional Interface
+Functional Interface: An interface with exactly one abstract method. This method defines the interface's single behavior.
+Besides the single abstract method, a functional interface can have any number of default and static methods.
+Example: java.util.function package in Java 8 provides many built-in functional interfaces.
+3. Instantiating Functional Interface
+Functional interfaces can be instantiated using:
+Anonymous Classes: Create a new "nameless" class that implements the interface.
+Lambda Expressions: Provides a shorthand notation for implementing functional interfaces.
+Method References: A reference to a method without executing it.
+Constructor References: A reference to a constructor without creating an instance.
+4. Examples of Functional Interfaces
+Example 1: Creating a Functional Interface
+java
+Copy code
+@FunctionalInterface
+public interface MyFirstFunctionalInterface {
+    void firstWork();
+}
+This interface has a single abstract method firstWork().
+Adding another abstract method would cause an error.
+Example 2: Anonymous Implementation Class
+java
+Copy code
+@FunctionalInterface
+public interface Human {
+    void say();
+}
+
+public class NormalClass {
+    Human hObjOne = new Human() {
+        @Override
+        public void say() {
+            System.out.println("I am James");
+        }
+    };
+    
+    Human hObjTwo = new Human() {
+        @Override
+        public void say() {
+            System.out.println("I am Tony");
+        }
+    };
+}
+Two instances of an anonymous inner class implement the Human functional interface.
+5. Default and Static Methods in Functional Interfaces
+Functional interfaces can have default and static methods.
+Default methods provide a default implementation that can be overridden.
+Static methods belong to the interface and cannot be overridden.
+6. Generic Functional Interfaces
+Generic Functional Interfaces: Allow the functional interface to work with different types.
+java
+Copy code
+@FunctionalInterface
+public interface GenericFunctionInterface<T> {
+    T compare(T a, T b);
+}
+This interface can be implemented for different types like Integer, String, etc.
+7. Lambda Expressions
+Lambda Expressions: Anonymous functions that provide a concise way to implement functional interfaces.
+Syntax:
+No parameters: () -> { method_body }
+One parameter: n -> { method_body } or (n) -> { method_body }
+Multiple parameters: (p, x) -> { method_body }
+Example: Lambda Expression with No Parameter
+java
+Copy code
+@FunctionalInterface
+public interface Human {
+    void say();
+}
+
+public class MyRunner {
+    public static void main(String[] args) {
+        Human hMsg = () -> System.out.println("Hello. It's me again, James");
+        hMsg.say();
+    }
+}
+Example: Lambda Expression with One Parameter
+java
+Copy code
+@FunctionalInterface
+public interface Human {
+    void say(String message);
+}
+
+public class MyRunner {
+    public static void main(String[] args) {
+        Human hMsg = st -> System.out.println(st + " It's me Tony");
+        hMsg.say("Hello | ");
+    }
+}
+Example: Lambda Expression with Multiple Parameters and Return Statement
+java
+Copy code
+@FunctionalInterface
+public interface MultipleParameterDemo {
+    double calculator(double a, double b, double c);
+}
+
+public class MyRunner {
+    public static void main(String[] args) {
+        MultipleParameterDemo addObj = (a, b, c) -> a + b + c;
+        double result = addObj.calculator(10, 20, 30);
+        System.out.println(result); // Output: 60.0
+    }
+}
+8. Built-in Functional Interfaces in Java
+Consumer<T>: Accepts a single argument and returns no result.
+Supplier<T>: Supplies a result of some type.
+Predicate<T>: Represents a boolean-valued function of one argument.
+Function<T, R>: Represents a function that accepts one argument and produces a result.
+Summary
+Functional Interfaces: Contain exactly one abstract method and can have multiple default and static methods.
+Lambda Expressions: Provide a concise way to instantiate functional interfaces.
+The concepts of functional interfaces and lambda expressions are integral to modern Java programming, allowing for more concise and readable code, especially when working with collections and streams.
